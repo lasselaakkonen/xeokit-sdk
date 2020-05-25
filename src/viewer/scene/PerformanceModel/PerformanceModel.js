@@ -518,7 +518,7 @@ class PerformanceModel extends Component {
             }
 
             if (this._currentBatchingLayer) {
-                if (!this._currentBatchingLayer.canCreatePortion(positions.length)) {
+                if (!this._currentBatchingLayer.canCreatePortion(indices.length)) {
                     this._currentBatchingLayer.finalize();
                     this._currentBatchingLayer = null;
                 }

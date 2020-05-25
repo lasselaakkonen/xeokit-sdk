@@ -99,14 +99,14 @@ class BatchingLayer {
     /**
      * Tests if there is room for another portion in this BatchingLayer.
      *
-     * @param lenPositions Number of positions we'd like to create in the portion.
+     * @param lenIndices Number of indices we'd like to create in the portion.
      * @returns {boolean} True if OK to creatye another portion.
      */
-    canCreatePortion(lenPositions) {
+    canCreatePortion(lenIndices) {
         if (this._finalized) {
             throw "Already finalized";
         }
-        return (!this._finalized && this._buffer.lenPositions + lenPositions) < (this._buffer.maxVerts * 3);
+        return (!this._finalized && (this._buffer.lenIndices + lenIndices < this._buffer.maxVerts));
     }
 
     /**
