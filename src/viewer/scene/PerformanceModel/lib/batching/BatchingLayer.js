@@ -100,7 +100,7 @@ class BatchingLayer {
      * Tests if there is room for another portion in this BatchingLayer.
      *
      * @param lenIndices Number of indices we'd like to create in the portion.
-     * @returns {boolean} True if OK to creatye another portion.
+     * @returns {boolean} True if OK to create another portion.
      */
     canCreatePortion(lenIndices) {
         if (this._finalized) {
